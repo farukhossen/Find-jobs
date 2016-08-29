@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Jobs</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Company</th>
+      <th>No of vacancies</th>
+      <th>Job nature</th>
+      <th>Education requirements</th>
+      <th>Job location</th>
+      <th>Salary range</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.post %></td>
+        <td><%= job.company %></td>
+        <td><%= job.no_of_vacancies %></td>
+        <td><%= job.job_nature %></td>
+        <td><%= job.education_requirements %></td>
+        <td><%= job.job_location %></td>
+        <td><%= job.salary_range %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job', new_job_path %>

@@ -1,0 +1,31 @@
+<div class="post">
+  <h4><%=@job.post%></h4>
+</div>
+<div class="company">
+  <h4><%=@job.company%></h4>
+</div>
+<div class="job-description">
+  <h4>Job Description</h4>
+  <ul>
+    <%@job.job_descriptions.each do |description| %>
+        <li><%= description.title%></li>
+    <%end %>
+  </ul>
+
+</div>
+<div class="job-nature">
+  <h4>Job Nature</h4>
+  <div><%= @job.job_nature %></div>
+</div>
+
+<div class="job-description">
+  <h4>Additional Requirements</h4>
+  <ul>
+    <%@job.additional_requirements.each do |req| %>
+        <li><%= req.title%></li>
+    <%end %>
+  </ul>
+
+</div>
+
+

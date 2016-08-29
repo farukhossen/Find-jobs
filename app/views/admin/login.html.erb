@@ -1,0 +1,16 @@
+<%= form_for(@admin, url: verify_login_admin_index_path) do |f| %>
+
+<div><%=@notice%></div>
+<div class="field">
+  <%= f.label :email %><br>
+  <%= f.text_field :email ,class:''%>
+</div>
+<div class="field">
+  <%= f.label :password %><br>
+  <%= f.password_field :password ,class:''%>
+</div>
+
+<div class="actions">
+  <%= f.submit class:'btn btn-primary',value:'Log in'%>
+</div>
+<% end %>

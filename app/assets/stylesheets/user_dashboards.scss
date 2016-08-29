@@ -1,0 +1,15 @@
+// Place all the styles related to the user_dashboards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div.sidebar{
+  border:1px solid #ddd;
+  padding:0
+}
+.sidebar-heading{
+  height: 40px;
+  width:100%;
+  background:rgba(0,0,255,.5);
+  padding:7px 5px;
+  color:#fff;
+  font-weight: bold;
+}

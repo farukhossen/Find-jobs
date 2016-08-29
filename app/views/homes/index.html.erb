@@ -1,0 +1,32 @@
+<div class="category-view">
+  <ul class="nav nav-pills category-tab" role="tablist">
+
+
+
+    <% @categories.each_with_index { |category,index| %>
+        <li role="presentation" class="category<%if index == 0 then%> active<%end%>">
+          <a href="#">
+            <%= category.title %><span class="badge"><%= category.subcategories.size%></span>
+          </a>
+          <ul class="sub-categories list-group">
+            <%category.subcategories.each do|subcategory|%>
+                <li class="list-group-item"> <%= link_to subcategory.title + '(' + subcategory.jobs.size.to_s + ')',job_view_path(subcategory)%></li>
+            <%end%>
+          </ul>
+        </li>
+    <% }%>
+  </ul>
+  <div class="tab-view-subcategory">
+        <% if @categories.any?%>
+          <ul class="sub-categories list-group" style="display:block;">
+            <%@categories.first.subcategories.each do|subcategory|%>
+                <li class="list-group-item"> <%= link_to subcategory.title + '(' + subcategory.jobs.size.to_s + ')',job_view_path(subcategory)%></li>
+            <%end%>
+          </ul>
+        <%end%>
+  </div>
+</div>
+
+
+
+

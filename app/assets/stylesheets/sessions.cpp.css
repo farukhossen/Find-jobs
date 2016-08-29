@@ -1,0 +1,12 @@
+.login-info{
+    width:300px;
+    border:1px solid #ddd;
+    padding:15px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 5px;
+}
+.field_with_errors{
+    width:100%;
+}
+

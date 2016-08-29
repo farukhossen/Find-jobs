@@ -1,0 +1,53 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %><%=select("Subcategory", "id", Subcategory.all.collect {|p| [ p.title, p.id ] }, {prompt: 'Select Subcategory' })%>
+
+  <div class="field">
+    <%= f.label :post %><br>
+    <%= f.text_field :post ,class:''%>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company ,class:'' %>
+  </div>
+  <div class="job-description">
+    <%= f.fields_for :job_descriptions do |ff|%>
+        <%= render 'job_description_fields', f:ff%>
+    <%end%>
+    <%=link_to_add_fields "add description", f, :job_descriptions%>
+  </div>
+  <div class="field">
+    <%= f.label :no_of_vacancies %><br>
+    <%= f.text_field :no_of_vacancies ,class:''%>
+  </div>
+  <div class="field">
+    <%= f.label :job_nature %><br>
+    <%= f.text_field :job_nature ,class:''%>
+  </div>
+    <div class="job-description">
+      <%= f.fields_for :additional_requirements do |ff|%>
+          <%= render 'additional_requirement_fields', f:ff%>
+      <%end%>
+      <%=link_to_add_fields "add requirement", f, :additional_requirements%>
+    </div>
+  <div class="field">
+    <%= f.label :job_location %><br>
+    <%= f.text_field :job_location ,class:''%>
+  </div>
+  <div class="field">
+    <%= f.label :salary_range %><br>
+    <%= f.text_field :salary_range ,class:''%>
+  </div>
+  <div class="actions">
+    <%= f.submit class:'btn btn-primary'%>
+  </div>
+<% end %>

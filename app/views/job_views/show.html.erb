@@ -1,0 +1,25 @@
+<div class="alert alert-success subcategory" role="alert">
+  <%= @subcategory.title%>
+</div>
+<%= will_paginate @jobs , next_label: h(">"), previous_label: h("<"), class: "pagination digg_pagination"%>
+<table class="table table-striped">
+  <%@jobs.each do |job|%>
+      <tr>
+          <td>
+             <div class="company">
+               <%= job.company%>
+             </div>
+             <div class="post">
+               <%=link_to job.post, job_details_job_view_path(job)%>
+             </div>
+             <div class="more-info">
+               <span> Location: <%= job.job_location%></span>
+             </div>
+          </td>
+      </tr>
+  <%end%>
+
+
+</table>
+<%= will_paginate @jobs , next_label: h(">"), previous_label: h("<"), class: "digg_pagination"%>
+

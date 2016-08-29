@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  post: MyString
+  company: MyString
+  no_of_vacancies: MyString
+  job_nature: MyString
+  eduation_requirements: MyText
+  job_location: MyString
+  salary_range: MyString
+
+two:
+  post: MyString
+  company: MyString
+  no_of_vacancies: MyString
+  job_nature: MyString
+  eduation_requirements: MyText
+  job_location: MyString
+  salary_range: MyString
